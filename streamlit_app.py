@@ -7,13 +7,12 @@ from sklearn.ensemble import RandomForestClassifier
 st.title('🌸 Iris Species Prediction App')
 st.info('This app builds a machine learning model to predict Iris species!')
 
-# Load dataset
-data_path = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv")
-
+# Load dataset from the provided URL
+data_url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv"
 try:
-    df = pd.read_csv(data_path)  # Load the dataset from the specified path
-except FileNotFoundError:
-    st.error("File not found. Please check the file path.")
+    df = pd.read_csv(data_url)  # Load the dataset from the specified URL
+except Exception as e:
+    st.error(f"An error occurred: {e}")
     st.stop()
 
 # Rename columns for easier access
