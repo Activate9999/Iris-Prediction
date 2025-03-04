@@ -8,7 +8,8 @@ st.title('🌸 Iris Species Prediction App')
 st.info('This app builds a machine learning model to predict Iris species!')
 
 # Load dataset
-data_path = r"C:\Users\kedar\OneDrive\Documents\SSDI\iris.data.csv"
+data_path = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv")
+
 try:
     df = pd.read_csv(data_path)  # Load the dataset from the specified path
 except FileNotFoundError:
